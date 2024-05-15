@@ -17,6 +17,7 @@ import java.net.URISyntaxException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
@@ -38,8 +39,10 @@ public class AppData {
 
     boolean tuTurno = false;
 
-    static List<String> board = new ArrayList<>(
-            Arrays.asList("-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"));
+    boolean prepararBarcos = true;
+
+    static List<String> board = new ArrayList<>(Collections.nCopies(49, "-"));
+
 
     public enum ConnectionStatus {
         DISCONNECTED, DISCONNECTING, CONNECTING, CONNECTED

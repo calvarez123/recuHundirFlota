@@ -31,6 +31,9 @@ public class ChatServer extends WebSocketServer {
     static List<String> board = new ArrayList<>(
             Arrays.asList("-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-"));
 
+    static List<String> tableroJudador1 = new ArrayList<>();
+    static List<String> tableroJudador2 = new ArrayList<>();
+
     private static final Map<String, Integer> connectedClients = new HashMap<>();
     private Map<WebSocket, String> connectionPlayerMap = new HashMap<>();
     private int posi1;

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.CtrlLayoutConnected">
+    <children>
+      <AnchorPane prefHeight="55.0" style="-fx-background-color: #95c3ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="15.0" text="HUNDIR LA FLOTA" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelRivalTurno" layoutX="692.0" layoutY="11.0" prefHeight="39.0" prefWidth="114.0" text="TURNO RIVAL" />
+            <Label fx:id="labelMiTurno" layoutX="29.0" layoutY="8.0" prefHeight="39.0" prefWidth="80.0" text="TU TURNO" />
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER_LEFT" layoutX="8.0" layoutY="542.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0">
+         <Label fx:id="serverAddressLabel">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+         <Label fx:id="clientIdLabel">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+         <Region HBox.hgrow="ALWAYS" />
+      </HBox>
+
+      <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="560.0" prefHeight="26.0" prefWidth="704.0" spacing="10.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+      <HBox layoutX="29.0" layoutY="55.0" prefHeight="30.0" prefWidth="727.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.4462890625">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="jugador1" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="64.4462890625">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt;" wrappingWidth="33.4462890625">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Label fx:id="puntuacion1" prefHeight="25.0" prefWidth="164.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="96.4462890625">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="jugador2" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="80.4462890625">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="--&gt;" wrappingWidth="33.4462890625">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Label fx:id="puntuacion2" prefHeight="25.0" prefWidth="164.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <GridPane alignment="TOP_CENTER" layoutX="294.0" layoutY="112.0" prefHeight="426.0" prefWidth="467.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="imagen1" fitHeight="42.0" fitWidth="87.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen2" fitHeight="54.0" fitWidth="61.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen3" fitHeight="52.0" fitWidth="61.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen4" fitHeight="54.0" fitWidth="67.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen6" fitHeight="50.0" fitWidth="65.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen7" fitHeight="47.0" fitWidth="66.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen9" fitHeight="55.0" fitWidth="67.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen10" fitHeight="44.0" fitWidth="68.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen11" fitHeight="45.0" fitWidth="80.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen14" fitHeight="50.0" fitWidth="65.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen13" fitHeight="57.0" fitWidth="66.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen5" fitHeight="45.0" fitWidth="61.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen8" fitHeight="44.0" fitWidth="70.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen12" fitHeight="47.0" fitWidth="66.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen15" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen16" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen17" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen18" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen19" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen20" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen21" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen22" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen23" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen24" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen25" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen26" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen27" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen28" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen29" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen30" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen31" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen32" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen33" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen34" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen35" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen36" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen37" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen38" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen39" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen40" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen41" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen42" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen43" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen44" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen45" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen46" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen47" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen48" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagen49" fitHeight="54.0" fitWidth="64.0" onMouseClicked="#imgpressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@agua.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Text fx:id="preparacion" layoutX="47.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pon tus Barcos" wrappingWidth="207.4462890625">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="barcosimg" fitHeight="204.0" fitWidth="217.0" layoutX="54.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@barcosejemplo.jpeg" />
+         </image>
+      </ImageView>
+      <Button fx:id="botonListo" layoutX="86.0" layoutY="452.0" mnemonicParsing="false" onAction="#actionListo" prefHeight="64.0" prefWidth="107.0" text="LISTO" />
+      <Label fx:id="cantidadbarcos" layoutX="80.0" layoutY="170.0" text="Te quedan: 6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

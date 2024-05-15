@@ -30,7 +30,7 @@ public class CtrlLayoutConnected {
     private TextArea messagesArea;
 
     @FXML
-    private Label puntuacion2, puntuacion1, labelMiTurno, labelRivalTurno;
+    private Label puntuacion2, puntuacion1, labelMiTurno, labelRivalTurno,cantidadbarcos;
 
     @FXML
     private Text jugador1;
@@ -45,12 +45,14 @@ public class CtrlLayoutConnected {
     private TextField messageField;
 
     @FXML
-    private Button sendButton, start;
+    private Button sendButton, start, botonListo;
 
     @FXML
     private ImageView imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, imagen8, imagen9, imagen10,
             imagen11, imagen12,
-            imagen13, imagen14, imagen15, imagen16;
+            imagen13, imagen14, imagen15, imagen16, imagen17,imagen18, imagen19, imagen20, imagen21, imagen22, imagen23, imagen24, imagen25
+            , imagen26, imagen27, imagen28, imagen29, imagen30, imagen31, imagen32, imagen33, imagen34, imagen35, imagen36, imagen37
+            , imagen38, imagen39, imagen40, imagen41, imagen42, imagen43, imagen44, imagen45,  imagen46, imagen47, imagen48, imagen49;
 
     @FXML
     private static List<ImageView> imageViews = new ArrayList<>();
@@ -68,11 +70,9 @@ public class CtrlLayoutConnected {
     static Image verde = new Image("/assets/verde.png");
     static Image azul = new Image("/assets/azul.png");
 
-    // rojo,negro,amarillo,blanco,gris,naranja,rosa,verde
+ 
 
-    // List<String> board_colors = new ArrayList<>((Arrays.asList("rojo", "negro",
-    // "amarillo", "azul", "gris", "naranja", "rosa", "verde","rojo", "negro",
-    // "amarillo", "azul", "gris", "naranja", "rosa", "verde")));
+    int ponerBarco = 6;
 
     public void initialize() {
 
@@ -96,6 +96,41 @@ public class CtrlLayoutConnected {
         imageViews.add(imagen14);
         imageViews.add(imagen15);
         imageViews.add(imagen16);
+        imageViews.add(imagen17);
+imageViews.add(imagen18);
+imageViews.add(imagen19);
+imageViews.add(imagen20);
+imageViews.add(imagen21);
+imageViews.add(imagen22);
+imageViews.add(imagen23);
+imageViews.add(imagen24);
+imageViews.add(imagen25);
+imageViews.add(imagen26);
+imageViews.add(imagen27);
+imageViews.add(imagen28);
+imageViews.add(imagen29);
+imageViews.add(imagen30);
+imageViews.add(imagen31);
+imageViews.add(imagen32);
+imageViews.add(imagen33);
+imageViews.add(imagen34);
+imageViews.add(imagen35);
+imageViews.add(imagen36);
+imageViews.add(imagen37);
+imageViews.add(imagen38);
+imageViews.add(imagen39);
+imageViews.add(imagen40);
+imageViews.add(imagen41);
+imageViews.add(imagen42);
+imageViews.add(imagen43);
+imageViews.add(imagen44);
+imageViews.add(imagen45);
+imageViews.add(imagen46);
+imageViews.add(imagen47);
+imageViews.add(imagen48);
+imageViews.add(imagen49);
+
+        
         setAppDataReference(AppData.getInstance());
 
     }
@@ -136,12 +171,34 @@ public class CtrlLayoutConnected {
 
     @FXML
     public void imgpressed(MouseEvent event) {
-        if (infoData.tuTurno) {
-            ImageView sourceimagen = (ImageView) event.getSource();
-            int imageIndex = imageViews.indexOf(sourceimagen);
-            if (sourceimagen.getImage().getUrl().equals(imagenInicial.getUrl())) {
-                infoData.MessegeBoard(imageIndex);
+        if (infoData.prepararBarcos && ponerBarco>0) {
+            ImageView sourceImagen = (ImageView) event.getSource();
+            int imageIndex = imageViews.indexOf(sourceImagen);
+            if (imageIndex != -1 && AppData.board.get(imageIndex).equals("-")) { // Solo actualiza si es "-", para evitar sobrescribir otras marcas
+                AppData.board.set(imageIndex, "B"); // Setea la posición a "B"
+                sourceImagen.setImage(new Image("/assets/barcos.jpg")); 
+                System.out.println(AppData.board);
+                ponerBarco-=1;
+                cantidadbarcos.setText("Te quedan: "+ponerBarco);
             }
+        } else {
+            if (infoData.tuTurno && infoData.prepararBarcos == false) {
+                System.out.println("entre mal");
+                ImageView sourceImagen = (ImageView) event.getSource();
+                int imageIndex = imageViews.indexOf(sourceImagen);
+                if (sourceImagen.getImage().getUrl().equals(imagenInicial.getUrl())) {
+                    infoData.MessegeBoard(imageIndex); // Notifica al servidor o maneja como necesario
+                }
+            }
+        }
+    }
+
+    @FXML
+    public void actionListo() {
+        if (ponerBarco==0){
+            System.out.println("mePulso");
+        }else{
+            System.out.println("aunNO");
         }
     }
 

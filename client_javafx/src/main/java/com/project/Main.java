@@ -23,7 +23,7 @@ public class Main extends Application {
         UtilsViews.addView(getClass(), "Disconnected", "/assets/layoutDisconnected.fxml");
         UtilsViews.addView(getClass(), "Connecting", "/assets/layoutConnecting.fxml");
         UtilsViews.addView(getClass(), "Disconnecting", "/assets/layoutDisconnecting.fxml");
-        UtilsViews.addView(getClass(), "Connected", "/assets/layoutConnected.fxml");
+        UtilsViews.addView(getClass(), "Connected", "/assets/layoutConnected_v2.fxml");
 
         Scene scene = new Scene(UtilsViews.parentContainer);
         
